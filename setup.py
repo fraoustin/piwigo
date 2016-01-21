@@ -12,7 +12,7 @@ import piwigo
 NAME = "piwigo"
 VERSION = piwigo.__version__
 DESC = "piwigo description"
-URLPKG = "https://url/of/piwigo/website"
+URLPKG = "https://github.com/fraoustin/piwigo.git"
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 
