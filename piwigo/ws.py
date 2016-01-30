@@ -42,9 +42,20 @@ class WsPiwigoException(Exception):
     def __str__(self):
         return "%s : %s" % (self.err, self.message)
 
+class PiwigoException(Exception):
+    
+    def __init__(self, strerr):
+        self._strerr = strerr
+
+    def __str__(self):
+        return self._strerr
+
+
 class Piwigo:
 
     def __init__(self, url):
+        if not len(url):
+            raise PiwigoException('url of piwigo is wrong')
         self._cookies = None
         if url[-1] == '/': url = url[:-1]
         self._url = url

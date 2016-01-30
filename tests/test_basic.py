@@ -6,7 +6,7 @@
 """
 
 import unittest
-from piwigo import Piwigo, WsNotExistException, WsErrorException, WsPiwigoException
+from piwigo import Piwigo, WsNotExistException, WsErrorException, WsPiwigoException, PiwigoException
 
 
 class BasicTestCase(unittest.TestCase):
@@ -22,7 +22,11 @@ class BasicTestCase(unittest.TestCase):
 
     def test_basic(self):
         self.assertTrue(self.piwigo.pwg.getVersion())
-    
+ 
+    def test_checkUrl(self):
+        self.assertRaises(PiwigoException, Piwigo(''))
+
+   
     def test_checkMethod(self):
         self.assertRaises(WsNotExistException, self.piwigo.pwg.methodNotExist)
 
