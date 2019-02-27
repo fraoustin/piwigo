@@ -26,7 +26,7 @@ Usage
 
 ::
 
-    import piwigo
+    from piwigo import Piwigo
     mysite = Piwigo('http://mysite.com')
     print(mysite.pwg.getVersion())
 
@@ -38,7 +38,7 @@ Sample of uplad file in category with id=1
 
 ::
 
-    import piwigo
+    from piwigo import Piwigo
     mysite = Piwigo('http://mysite.com')
     mysite.pwg.session.login(username="test", password="test")
     mysite.pwg.images.addSimple(image="myphoto.jpg", "category"=1)
